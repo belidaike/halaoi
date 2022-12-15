@@ -32,3 +32,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('products', ProductController::class);
 });
 
+Route::get('/postss', [HomeController::class, 'postss']);
+route::get('/search_product', [ProductController::class, 'search_product']);
+
+

@@ -35,4 +35,36 @@
             @endforeach
         </tbody>
     </table>
+    <div class="row">
+            @foreach($users as $user)
+            @if($user['gender'] == 'male')
+            <div class="text-center col-sm-3 male card-body bg-danger">
+                <img width="89" src="/images/male.png" class="" alt="">
+                <p>My name is ->{{ $user->name }} My last name is->{{ $user->lname }}</p>
+            </div>
+            <div class="text-center col-sm-3 male card-body bg-info">
+                <p>{{ $user->name }}</p>
+                <p>{{ $user->lname }}</p>
+            </div>
+            <div class="text-center col-sm-3 male card-body bg-info">
+                <p>{{ $user->name }}</p>
+                <p>{{ $user->lname }}</p>
+            </div>
+            @endif
+
+            @if($user['gender'] == 'female')
+            <div class="text-center col female col bg-warning">
+                <p>{{$user->name}}</p>
+                <p>{{$user->lname}}</p>
+            </div>
+            @endif
+
+            @endforeach
+    </div>
 </div>
+
+
+<style>
+    .img{
+    }
+</style>

@@ -29,7 +29,7 @@
         </style>
     </head>
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0" style="background: #de795b">
+        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0" style="">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
@@ -57,7 +57,7 @@
                             <div class="col-md-8">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h2 class="text-center">Gama kuno syag Post ayieee</h2>
+                                        <h2 class="text-center">All Post</h2>
                                     </div>
                                     <div class="card-body">
                                         @if (session()->has('message'))
@@ -65,12 +65,13 @@
                                                 {{ session('message') }}
                                             </div>
                                         @endif
-                                        @livewire('posts')
+                                        @livewire('show-posts')
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     @livewireScripts
                 </body>
                 </html>

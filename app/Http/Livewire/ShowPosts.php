@@ -6,7 +6,7 @@ use Livewire\Component;
 use App\Models\Post;
 use App\Models\User;
   
-class Posts extends Component
+class ShowPosts extends Component
 {
     public $posts, $title, $body, $post_id;
     public $fname, $lname, $gender;
@@ -21,7 +21,7 @@ class Posts extends Component
     {
         $this->posts = Post::all();
         $this->users = User::all();
-        return view('livewire.posts');
+        return view('livewire.show-posts');
     }
   
     /**

@@ -20,8 +20,10 @@ class CreateAdminUserSeeder extends Seeder
     {
         //Admin Seeder
         $user = User::create([
-            'name' => 'LaravelTuts', 
-            'email' => 'admin@laraveltuts.com',
+            'name' => 'admin', 
+            'email' => 'admin@gmail.com',
+            'lname' => 'lods',
+            'gender' => 'male',
             'password' => bcrypt('password')
         ]);
       

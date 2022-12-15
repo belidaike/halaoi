@@ -115,4 +115,20 @@ class ProductController extends Controller
         return redirect()->route('products.index')
                         ->with('success','Product deleted successfully');
     }
+
+    public function search_product(Request $request)
+    {
+        $products = Product::latest()->paginate(5);
+        return view('products.index',compact('products'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+
+        $search_text=$request->search;
+
+        $products=product::where('name','LIKE',"%$search_text%")->orWhere('detail','LIKE',"%$search_text%")->paginate(6);
+
+        return view('products.index',compact('products'));
+        
+
+        
+    }
 }
